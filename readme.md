@@ -69,3 +69,12 @@ Each agent returns its output as a structured string or list, which is then form
 ---
 
 ## 📄 Example Output (Web & PDF)
+
+![Homepage](pictures/home1.png)
+![Homepage](pictures/home2.png)
+![Output](pictures/op1.png)
+![Output](pictures/op2.png)
+![Output](pictures/op3.png)
+![Output](pictures/mail1.png)
+![Output](pictures/mail2.png)
+
