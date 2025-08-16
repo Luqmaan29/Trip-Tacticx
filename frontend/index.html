@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TripTacticx Travel Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+  <source src="bg_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+  <div id="overlay"></div>
+
+  <main class="centered-container">
+    <div class="triptacticx-card">
+      <div class="triptacticx-title">TRIPTACTICX</div>
+      <form id="tripForm" class="triptacticx-form" novalidate>
+        <div class="form-field">
+          <label for="name">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label for="email">Your Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label for="destination">Destination <span class="required">*</span></label>
+          <input type="text" id="destination" name="destination" required />
+        </div>
+        <div class="form-field">
+          <label for="days">Trip Duration (days) <span class="required">*</span></label>
+          <input type="number" id="days" name="days" min="1" value="5" required />
+        </div>
+        <div class="form-field">
+          <label for="group_size">Group Size <span class="required">*</span></label>
+          <input type="number" id="group_size" name="group_size" min="1" value="2" required />
+        </div>
+        <div class="form-field">
+          <label for="trip_type">Trip Type</label>
+          <select id="trip_type" name="trip_type" required>
+            <option value="Leisure">Leisure</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Honeymoon">Honeymoon</option>
+            <option value="Solo">Solo</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="budget">Budget per Person (₹) <span class="required">*</span></label>
+          <input type="text" id="budget" name="budget" placeholder="e.g., 15000" required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number" />
+        </div>
+        <div class="form-field">
+          <label for="preferences">Special Interests / Preferences</label>
+          <textarea id="preferences" name="preferences" rows="3" placeholder="E.g., nature, culture, food"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="source_location">Your Current Location <span class="required">*</span></label>
+          <input type="text" id="source_location" name="source_location" required autocomplete="off" />
+        </div>
+        <button type="submit" class="triptacticx-btn" aria-label="Plan my trip">Plan My Trip</button>
+        <div id="loader" style="display:none; text-align:center; margin: 24px 0;"></div>
+        <section id="result" aria-live="polite" tabindex="0"></section>
+        <button id="resetBtn" type="button" class="triptacticx-btn" style="display:none; margin-top:18px;">Plan Another Trip</button>
+        <button id="downloadPdfBtn" type="button" class="triptacticx-btn" style="display:none; margin-top:12px; background:linear-gradient(90deg,#06b6d4 0%,#3b82f6 100%);">Download PDF</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
